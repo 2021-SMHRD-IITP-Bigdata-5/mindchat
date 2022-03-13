@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mindchat.backend.mapper.UserMapper">
+
+    <select id="selectAll" resultType="com.mindchat.backend.domain.UserInfo">
+        select * from tbl_user
+    </select>
+
+    <select id="selectUser" parameterType="String" resultType="com.mindchat.backend.domain.UserInfo">
+        select * from tbl_user where user_email=#{user_email}
+    </select>
+
+    <insert id="createUser" parameterType="com.mindchat.backend.domain.UserInfo">
+       insert into tbl_user(
+         user_id
+         , user_pw
+         , user_name
+         , user_birthdate
+         , user_gender
+         , user_phone
+         , user_email
+         , user_addr1
+         , user_addr2
+         , user_category
+        ) values (
+         #{user_id}
+         , #{user_pw}
+         , #{user_name}
+         , #{user_birthdate}
+         , #{user_gender}
+         , #{user_phone}
+         , #{user_email}
+         , #{user_addr1}
+         , #{user_addr2}
+         , #{user_category}
+        );
+    </insert>
+
+</mapper>
