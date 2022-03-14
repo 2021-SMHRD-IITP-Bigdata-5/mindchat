@@ -1,0 +1,81 @@
+.title{
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    height: 5%;
+}
+
+.title > h1{
+    text-align:center;
+    display: block;
+}
+
+.title > a{
+    left:10px;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.menu_ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+}
+
+
+.menu_a{
+    text-decoration: none;
+    color: #000;
+}
+
+.coupontitle{
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 80px;
+}
+
+.coupontitle > div{
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag1{
+    align-items: center;
+}
+
+
+.table{
+    border: 30px;
+    width: 93%;
+    height: 300px;
+    border: 25px ;
+    solid-color: #F5F5F5;
+    margin-left: 60px;
+}
+
+.tag2 > td{
+    text-align: center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+
+.tag3 > td{
+    text-align: center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    font-size: 23px;
+}
+

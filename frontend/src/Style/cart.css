@@ -1,0 +1,184 @@
+#chat1 {
+    position: absolute;
+    text-align: center;
+    border-radius: 70px;
+    border: 3px solid black;
+    background-color: #F5F5F5;
+    left: -7%;
+    width: 400px;
+    height: 700px;
+}
+#chat2 {
+    position: relative;
+    background-color: #000000;
+    right: 60px;
+}
+#img1{
+    float: left;
+    width:150px;
+    height:150px;
+}
+
+.title{
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    height: 5%;
+}
+
+.title > h1{
+    text-align:center;
+    display: block;
+}
+
+.title > a{
+    left:10px;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.menu_ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+}
+
+
+.menu_a{
+    text-decoration: none;
+    color: #000;
+}
+
+.table_1{
+    width: 93%;
+    border: 25px;
+    solid-color : #F5F5F5;
+    margin-left: 60px;
+}
+
+.table_tr{
+    font-size: 15px;
+}
+
+.table_td{
+    text-align:left;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 30px;
+}
+
+.table_img{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 170px;
+
+}
+
+.table_information{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 800px;
+}
+.table_price{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 100px;
+}
+
+.table_reserves{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 100px;
+}
+
+.table_category{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 120px;
+}
+
+.table_fee{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 120px;
+}
+
+.table_sum{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 100px;
+}
+
+.table_selection{
+    text-align:center;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    width: 100px;
+}
+
+.table_box{
+    text-align:left;
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+.table_box_img{
+    width:180px;
+}
+
+.table_td{
+    border-left-width: 0px;
+    padding-left: 0px;
+}
+
+.chat{
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+}
+
+.chat_table{
+    position: relative;
+    right: 50px;
+    visibility: hidden;
+}
+
+.chat_a{
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+}
+
+.chat_b{
+    border: 10px solid;
+    font-size:180%;
+    font-family:cursive;
+    width: 130px;
+    margin-left:70%;
+}
+

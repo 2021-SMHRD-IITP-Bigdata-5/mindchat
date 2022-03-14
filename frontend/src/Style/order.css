@@ -1,0 +1,77 @@
+.title > h1{
+    text-align:center;
+    display: block;
+}
+
+.title > a{
+    left:10px;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.menu_ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+}
+
+
+.menu_a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.check > ul{
+    padding-left: 0px;
+    position: fixed;
+    top: 220px;
+}
+
+
+#check ul a{
+    background-color: #696969;
+    border: 25px solid #696969;
+    color: #f8f8ff;
+    margin-left: 60px;
+}
+.table{
+    width: 93%;
+    height: 300px;
+    border: 25px;
+    solid-color:  #F5F5F5;
+    margin-left: 60px;
+}
+.date{
+    border-top-width: 0px;
+    border-left-width:0px;
+}
+.date > a > img{
+    width: 60px;
+    height: 30px;
+}
+.date > input{
+    width: 80px;
+    height: 23px;
+}
+.date >input >button{
+    border-top-width: 0px;
+    border-left-width: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    padding-left: 0px;
+}
+.info{
+    margin-left: 25px;
+}

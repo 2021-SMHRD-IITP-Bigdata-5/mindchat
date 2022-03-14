@@ -1,0 +1,38 @@
+.title > h1{
+    text-align:center;
+    display: block;
+}
+
+.title > a{
+    left:10px;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    height: 55px;
+}
+
+.menu_ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+}
+
+
+.menu_a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.image > a > img {
+    align-items : center;
+    width: 400px;
+    height: 400px;
+}
