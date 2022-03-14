@@ -9,7 +9,6 @@ import Delivery from "../components/Delivery";
 import Event from "../components/Event"
 import Mileage from "../components/Mileage";
 import Order from "../components/Order";
-import UploadPage from "../components/UploadPage";
 
 const RouterComponent = () => {
     return (
@@ -23,7 +22,6 @@ const RouterComponent = () => {
                 <Route exact path="/main/Cart/event" component={Event} />
                 <Route exact path="/main/Cart/Mileage" component={Mileage} />
                 <Route exact path="/main/Cart/Order" component={Order} />
-                <Route exact path="/main/UploadPage" component={UploadPage} />
             </Switch>
         </BrowserRouter>
     );
