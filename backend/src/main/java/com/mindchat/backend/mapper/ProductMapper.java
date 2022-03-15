@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface ProductMapper {
-    List<ProductInfo> selectAll();
+    List<ProductInfo> selectAll(); // 상품
 
 }

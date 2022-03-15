@@ -13,7 +13,7 @@ class Delivery extends Component {
 
             <div className="menu">
                 <ul className="menu_ul"  style={{listStyle:'none'}}>
-                    <li> <Link to="/main/Cart"><strong>cart</strong></Link></li>
+                    <li><Link to="/main/Cart"><strong>cart</strong></Link></li>
                     <li><Link to="/main/Cart/Order">order</Link></li>
                     <li><Link to="/main/Cart/Delivery">delivery</Link></li>
                     <li><Link to="/main/Cart/Coupon">coupon</Link></li>
