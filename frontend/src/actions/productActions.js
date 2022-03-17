@@ -1,9 +1,13 @@
 import { FETCH_PRODUCTS } from "../types";
 import { FILTER_PRODUCTS_BY_SIZE, ORDER_PRODUCTS_BY_PRICE } from "../types";
-export const fetchProducts = () => async (dispatch) => {
-  const res = await fetch("/api/products");
+
+const { REACT_APP_BACKEND_LOCAL_PORT } = process.env;
+export const getProducts = () => async (dispatch) => {
+  const res = await fetch(`${REACT_APP_BACKEND_LOCAL_PORT}/ `);
   const data = await res.json();
-  console.log(data);
+
+  console.log("겟프로덕트데이터",data);
+
   dispatch({
     type: FETCH_PRODUCTS,
     payload: data,

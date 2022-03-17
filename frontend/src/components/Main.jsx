@@ -1,53 +1,15 @@
-import React, {useEffect, Component} from 'react';
+import React, {Component} from 'react';
 import "../Style/main.css";
 import {Link} from "react-router-dom";
 import {Button} from "@material-ui/core";
-import {ImageList, ImageListItem, ImageListItemBar} from "@mui/material";
-
-const itemData = [
-    {
-        img   : 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        title : 'Breakfast',
-        author: '@bkristastucchio',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title : 'Burger',
-        author: '@rollelflex_graphy726',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-        title : 'Camera',
-        author: '@helloimnik',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title : 'Coffee',
-        author: '@nolanissac',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-        title : 'Hats',
-        author: '@hjrc33',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-        title : 'Honey',
-        author: '@arwinneil',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-        title : 'Basketball',
-        author: '@tjdragotta',
-    },
-    {
-        img   : 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-        title : 'Fern',
-        author: '@katie_wasserman',
-    },
-
-];
-
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+import Modal from "react-modal";
+import {getProducts} from "../actions/productActions";
+import {connect} from "react-redux";
+import {addToCart} from "../actions/cartActions";
+import axios from "axios";
+import Apiservice from "../Apiservice";
 
 class Main extends Component {
     constructor(props) {
@@ -57,9 +19,14 @@ class Main extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.props.fetchProducts();
-    // }
+    componentDidMount() {
+        // Apiservice.fetchProducts().then(r => {console.log(r)} );
+        // console.log("젭알...");
+        // this.setState({product: getProducts()});
+        // console.log("stateproduct", this.state.product);
+        this.props.getProducts();
+    };
+
 
     openModal = (product) => {
         this.setState({product});
@@ -71,72 +38,153 @@ class Main extends Component {
     render() {
         const {product} = this.state;
         return (
-            <body>
-            <nav className="navbar">
-                <div>MIND CHAT</div>
-                <ul className="n-list">
-                    <li><a href="">Perfume</a></li>
-                    &nbsp;
-                    <li><a href="">About</a></li>
-                    <li><Link to="/main/Cart/Order">Order</Link></li>
-                    <li><Link to="/main/Cart">Cart</Link></li>
-                    <li><Link to="/main/Cart/Event">event</Link></li>
-                    <li><a href="">FAQ</a></li>
-                </ul>
-            </nav>
-            <section>
-                <h1 className='mainshow'>
-                    It smells great
-                </h1>
-                <h4> Expectaion
-                    Predetermined resentments
-                </h4>
-            </section>
+            <>
+                <nav className="navbar">
+                    <div>MIND CHAT</div>
+                    <ul className="n-list">
+                        <li><Link to="/perfume">Perfume></Link></li>
+                        <li><Link to="/About">About</Link></li>
+                        <li><Link to="/Order">Order</Link></li>
+                        <li><Link to="/Cart">Cart</Link></li>
+                        <li><Link to="/Event">event</Link></li>
+                        <li><Link to="/FAQ">FAQ</Link></li>
+                    </ul>
+                </nav>
+                <section>
+                    <h1 className='mainshow'>
+                        It smells great
+                    </h1>
+                    <h4> Expectaion
+                        Predetermined resentments
+                    </h4>
+                </section>
 
-            <div className="main_text0">
-                <h3>BEST COLLECTION</h3>
-                <div className="contents1">나만 알고싶은 설레는 향</div>
-            </div>
-
-
-            <div style={{width: '100%', margin: '3ream auto', textAlign: '-webkit-center'}}>
-
-
-                {/* Filter */}
-
-                {/* Search */}
-
-                {/* Cards*/}
-                <ImageList sx={{width: '80%', height: '500', margin: '30px', alignItems: 'center'}}>
-                    {itemData.map((item) => (
-                        <ImageListItem key={item.img}>
-                            <img
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                alt={item.title}
-                                loading="lazy"
-                            />
-                            <ImageListItemBar
-                                title={item.title}
-                                subtitle={<span>by: {item.author}</span>}
-                                position="below"
-                            />
-                        </ImageListItem>
-                    ))}
-                </ImageList>
-
-
-                <div style={{justifyContent: 'center'}}>
-
-                    <Button variant="outlined">더보기</Button>
+                <div className="main_text0">
+                    <h3>BEST COLLECTION</h3>
+                    <div className="contents1">나만 알고싶은 설레는 향</div>
                 </div>
 
 
-            </div>
-            </body>
+                <div style={{width: '100%', margin: '3ream auto', textAlign: '-webkit-center'}}>
+
+
+                    {/* Filter */}
+
+                    {/* Search */}
+
+                    {/* Cards*/}
+
+                    {/*이미지 부분*/}
+                    {/*<ImageList sx={{width: '80%', height: '500', margin: '30px', alignItems: 'center'}}>*/}
+                    {/*    {itemData.map((item) => (*/}
+                    {/*        <ImageListItem key={item.img}>*/}
+                    {/*            <img*/}
+                    {/*                src={`${item.img}?w=248&fit=crop&auto=format`}*/}
+                    {/*                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
+                    {/*                alt={item.title}*/}
+                    {/*                loading="lazy"*/}
+                    {/*            />*/}
+                    {/*            <ImageListItemBar*/}
+                    {/*                title={item.title}*/}
+                    {/*                subtitle={<span>by: {item.author}</span>}*/}
+                    {/*                position="below"*/}
+                    {/*            />*/}
+                    {/*        </ImageListItem>*/}
+                    {/*    ))}*/}
+                    {/*</ImageList>*/}
+
+                    <div>
+                        <Fade>
+                            {!this.props.products ? (
+                                <div>Loading...</div>
+                            ) : (
+                                <ul className="products">
+                                    {this.props.products.map((product) => (
+                                        <li key={product.p_seq}>
+                                            <div className="product">
+                                                <a
+                                                    href={"#" + product.p_seq}
+                                                    onClick={() => this.openModal(product)}
+                                                >
+                                                    <img
+                                                        src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                                        alt={product.p_id}/>
+                                                    <p>{product.p_id}</p>
+                                                </a>
+                                                <div className="product-price">
+                                                    <div>{(product.p_price)}</div>
+                                                    <button
+                                                        onClick={() => this.props.addToCart(product)}
+                                                        className="button primary"
+                                                    >
+                                                        Add To Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </Fade>
+                        {product && (
+                            <Modal isOpen={true} onRequestClose={this.closeModal} ariaHideApp={false}>
+                                <Zoom>
+                                    <button className="close-modal" onClick={this.closeModal}>
+                                        x
+                                    </button>
+                                    <div className="product-details">
+                                        <img src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                             alt={product.p_id}/>
+                                        <div className="product-details-description">
+                                            <p>
+                                                <strong>{product.p_id}</strong>
+                                            </p>
+                                            <p>{product.p_name}</p>
+                                            {/*                  <p>*/}
+                                            {/*                      Avaiable Sizes:{" "}*/}
+                                            {/*                      {product.p_id.map((x) => (*/}
+                                            {/*                          <span>*/}
+                                            {/*  {" "}*/}
+                                            {/*                              <button className="button">{x}</button>*/}
+                                            {/*</span>*/}
+                                            {/*                      ))}*/}
+                                            {/*                  </p>*/}
+                                            <div className="product-price">
+                                                <div>{(product.p_price)}</div>
+                                                <button
+                                                    className="button primary"
+                                                    onClick={() => {
+                                                        this.props.addToCart(product);
+                                                        this.closeModal();
+                                                    }}
+                                                >
+                                                    Add To Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Zoom>
+                            </Modal>
+                        )}
+                    </div>
+
+
+                    <div style={{justifyContent: 'center'}}>
+
+                        <Button variant="outlined">더보기</Button>
+                    </div>
+
+
+                </div>
+            </>
         );
     }
-};
+}
 
-
-export default Main;
+export default connect(
+    (state) => ({products: state.products.filteredItems}),
+    {
+        getProducts,
+        addToCart,
+    }
+)(Main);

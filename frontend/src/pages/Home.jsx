@@ -1,7 +1,4 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Intro from '../components/Intro';
-import Cart from '../components/Cart'
 import Coupon from "../components/Coupon";
 import Main from "../components/Main";
 import Delivery from "../components/Delivery";
@@ -18,7 +15,6 @@ const Home = () => {
             <Delivery />
             <Mileage />
             <Order />
-
         </div>
     );
 };

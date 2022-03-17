@@ -1,5 +1,6 @@
 package com.mindchat.backend.controller;
 
+import com.mindchat.backend.domain.ProductInfo;
 import com.mindchat.backend.domain.ResponseDTO;
 import com.mindchat.backend.mapper.ProductMapper;
 import com.mindchat.backend.service.ProductService;
@@ -17,39 +18,44 @@ import java.util.List;
 
 @Controller
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/")
 public class ProductController {
 
-    @GetMapping("/test")
-    public ResponseEntity<?> test(){
-        return ResponseEntity.ok().body("product_path_success");
-    }
+	@Autowired
+	ProductService productService;
+	ProductMapper mapper;
 
+	ProductController(ProductMapper mapper) {
+		this.mapper = mapper;
+	}
 
+	@GetMapping("/test")
+	public ResponseEntity<?> test() {
+		return ResponseEntity.ok().body("product_path_success");
+	}
 
-    @Autowired
-    ProductService productService;
+	//Entity {"error":null,"data":["test"]}
+	//new 대신 builder
+	@CrossOrigin(origins = "http://localhost:3001")
+	@GetMapping("/test2")
+	public ResponseEntity<?> testController() {
+		List<String> list = new ArrayList<>();
+		list.add("testword1");
+		list.add("testword2");
+		ResponseDTO<String> res = ResponseDTO.<String>builder().data(list).build();
+		return ResponseEntity.ok().body(res);
+//        return ResponseEntity.ok().body(productService.testService());
+	}
 
-    ProductMapper mapper;
-    ProductController(ProductMapper mapper){
-        this.mapper=mapper;
-    }
+	// 0315 추가 유진
+	@CrossOrigin(origins = "http://localhost:3001")
+	@GetMapping("/")
+	public List<ProductInfo> productsList() {
+		System.out.println("프로덕트리스트 출력 성공");
+		return productService.productsList();
 
-    //Entity {"error":null,"data":["test"]}
-    //new 대신 builder
-    @CrossOrigin(origins = "http://localhost:3001")
-    @GetMapping("/test2")
-    public ResponseEntity<?> testController(){
-//        List<String> list = new ArrayList<>();
-//        list.add("testword1");
-//        list.add("testword2");
-//        ResponseDTO<String> res = ResponseDTO.<String>builder().data(list).build();
-//        return ResponseEntity.ok().body(res);
-        return ResponseEntity.ok().body(productService.testService());
-    }
-
-
-
+	}
+    // 0315 추가 끝
 
 
 }

@@ -9,11 +9,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     combineReducers({
         cart: cartReducer,
-        coupon: couponReducer,
-        delivery: deliveryReducer,
-        event: eventReducer,
-        main: mainReducer,
-        mileage: mileageReducer,
+
         products: productsReducer,
         order: orderReducer,
     }),

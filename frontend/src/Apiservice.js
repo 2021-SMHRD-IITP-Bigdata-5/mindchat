@@ -1,36 +1,39 @@
 import axios from 'axios';
-const CART_API_BASE_URL = "";
-class Apiservice {
 
+const { REACT_APP_BACKEND_LOCAL_PORT } = process.env;
+
+//  env로 옮겨서 경로 숨김
+
+class Apiservice {
     // Products
-    getProducts(){
-        return axios.get(CART_API_BASE_URL + 'products');
+    fetchProducts(){
+        return axios.get(`${REACT_APP_BACKEND_LOCAL_PORT}/products/`);
     }
     // productsID
     deleteProducts(productsID){
-        return axios.delete(CART_API_BASE_URL + 'products/' + productsID);
+        return axios.delete(REACT_APP_BACKEND_LOCAL_PORT + 'products/' + productsID);
     }
     // product 객체
     addProducts(product){
-        return axios.post(CART_API_BASE_URL + 'products', product);
+        return axios.post(REACT_APP_BACKEND_LOCAL_PORT + 'products', product);
     }
 
     // Orders
     // 아직 안정함 #####
     getOrders(userID){
-        return axios.get(CART_API_BASE_URL + 'orders/' + userID);
+        return axios.get(REACT_APP_BACKEND_LOCAL_PORT + 'orders/' + userID);
     }
     // ordersID
     deleteOrders(ordersID){
-        return axios.delete(CART_API_BASE_URL + 'orders/' + ordersID);
+        return axios.delete(REACT_APP_BACKEND_LOCAL_PORT + 'orders/' + ordersID);
     }
     // order 객체  ##### 객체 구성 + 전달 _id 미정
     addOrders(order){
-        return axios.put(CART_API_BASE_URL + 'orders/' + order._id, order)
+        return axios.put(REACT_APP_BACKEND_LOCAL_PORT + 'orders/' + order._id, order)
     }
 
     main(){
-        return axios.get(CART_API_BASE_URL)
+        return axios.get(REACT_APP_BACKEND_LOCAL_PORT)
     }
 
 }

@@ -9,25 +9,21 @@ import Delivery from "../components/Delivery";
 import Event from "../components/Event"
 import Mileage from "../components/Mileage";
 import Order from "../components/Order";
-
-import LoginTest from "../components/LoginTest";
+import Faq from "../components/Faq";
 
 const RouterComponent = () => {
     return (
         <BrowserRouter>
             <Switch>
-
-                <Route exact path="/login" component={LoginTest} />
-
-
                 <Route exact path="/" component={Intro} />
-                <Route exact path="/main" component={Main} />
-                <Route exact path="/main/Cart" component={Cart} />
-                <Route exact path="/main/Cart/Coupon" component={Coupon}/>
-                <Route exact path="/main/Cart/Delivery" component={Delivery}/>
-                <Route exact path="/main/Cart/event" component={Event} />
-                <Route exact path="/main/Cart/Mileage" component={Mileage} />
-                <Route exact path="/main/Cart/Order" component={Order} />
+                <Route  path="/main" component={Main} />
+                <Route  path="/Cart" component={Cart} />
+                <Route  path="/Coupon" component={Coupon}/>
+                <Route  path="/Delivery" component={Delivery}/>
+                <Route  path="/event" component={Event} />
+                <Route  path="/Mileage" component={Mileage} />
+                <Route  path="/Order" component={Order} />
+                <Route  path="/Faq" component={Faq} />
             </Switch>
         </BrowserRouter>
     );

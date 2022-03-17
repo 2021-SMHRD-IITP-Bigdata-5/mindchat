@@ -23,7 +23,7 @@ function Intro() {
 
             <div className="bg">
 
-                <video id="video" muted autoplay='true' loop>
+                <video id="video" muted autoPlay='true' loop>
                 </video>
             </div>
         </body>
