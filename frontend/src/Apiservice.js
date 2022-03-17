@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-const CART_API_BASE_URL = "http://project-db-stu2.ddns.net:3308";
-
+const CART_API_BASE_URL = "";
 class Apiservice {
 
     // Products

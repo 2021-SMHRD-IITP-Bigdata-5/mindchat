@@ -10,10 +10,16 @@ import Event from "../components/Event"
 import Mileage from "../components/Mileage";
 import Order from "../components/Order";
 
+import LoginTest from "../components/LoginTest";
+
 const RouterComponent = () => {
     return (
         <BrowserRouter>
             <Switch>
+
+                <Route exact path="/login" component={LoginTest} />
+
+
                 <Route exact path="/" component={Intro} />
                 <Route exact path="/main" component={Main} />
                 <Route exact path="/main/Cart" component={Cart} />
