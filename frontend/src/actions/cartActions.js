@@ -2,9 +2,10 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../types";
 
 export const addToCart = (product) => (dispatch, getState) => {
   const cartItems = getState().cart.cartItems.slice();
+
   let alreadyExists = false;
   cartItems.forEach((x) => {
-    if (x._id === product._id) {
+    if (x.p_seq === product.p_seq) {
       alreadyExists = true;
       x.count++;
     }
@@ -22,7 +23,7 @@ export const addToCart = (product) => (dispatch, getState) => {
 export const removeFromCart = (product) => (dispatch, getState) => {
   const cartItems = getState()
     .cart.cartItems.slice()
-    .filter((x) => x._id !== product._id);
+    .filter((x) => x.p_seq !== product.p_seq);
   dispatch({ type: REMOVE_FROM_CART, payload: { cartItems } });
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };

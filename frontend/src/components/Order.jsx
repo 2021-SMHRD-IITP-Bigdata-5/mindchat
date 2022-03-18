@@ -29,6 +29,7 @@ class Order extends Component {
                 <div>
                     <table className="table" border="30">
                         <tr>
+
                             <td className="date">
 
                                 <a href="#"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date1.gif" /></a>

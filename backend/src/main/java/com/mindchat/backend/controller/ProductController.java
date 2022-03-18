@@ -16,9 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Controller
 @RestController
 @RequestMapping("/")
+// 루트페이지 외에는 권한 오류남 !!! 수정 필요
+
 public class ProductController {
 
 	@Autowired

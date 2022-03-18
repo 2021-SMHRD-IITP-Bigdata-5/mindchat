@@ -8,8 +8,8 @@ import Modal from "react-modal";
 import {getProducts} from "../actions/productActions";
 import {connect} from "react-redux";
 import {addToCart} from "../actions/cartActions";
-import axios from "axios";
-import Apiservice from "../Apiservice";
+import Filter from "../components/Filter";
+import MainCart from "./MainCart";
 
 class Main extends Component {
     constructor(props) {
@@ -20,10 +20,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        // Apiservice.fetchProducts().then(r => {console.log(r)} );
-        // console.log("젭알...");
-        // this.setState({product: getProducts()});
-        // console.log("stateproduct", this.state.product);
+        // action 호출 !
         this.props.getProducts();
     };
 
@@ -38,11 +35,11 @@ class Main extends Component {
     render() {
         const {product} = this.state;
         return (
-            <>
+            <div>
                 <nav className="navbar">
                     <div>MIND CHAT</div>
                     <ul className="n-list">
-                        <li><Link to="/perfume">Perfume></Link></li>
+                        <li><Link to="/perfume">Perfume</Link></li>
                         <li><Link to="/About">About</Link></li>
                         <li><Link to="/Order">Order</Link></li>
                         <li><Link to="/Cart">Cart</Link></li>
@@ -93,6 +90,7 @@ class Main extends Component {
                     {/*    ))}*/}
                     {/*</ImageList>*/}
 
+                    <Filter/>
                     <div>
                         <Fade>
                             {!this.props.products ? (
@@ -106,10 +104,10 @@ class Main extends Component {
                                                     href={"#" + product.p_seq}
                                                     onClick={() => this.openModal(product)}
                                                 >
-                                                    <img
+                                                    <img width="300px"
                                                         src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
                                                         alt={product.p_id}/>
-                                                    <p>{product.p_id}</p>
+                                                    <p>{product.p_name}</p>
                                                 </a>
                                                 <div className="product-price">
                                                     <div>{(product.p_price)}</div>
@@ -133,22 +131,22 @@ class Main extends Component {
                                         x
                                     </button>
                                     <div className="product-details">
-                                        <img src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                        <img width="300px" src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
                                              alt={product.p_id}/>
                                         <div className="product-details-description">
                                             <p>
                                                 <strong>{product.p_id}</strong>
                                             </p>
                                             <p>{product.p_name}</p>
-                                            {/*                  <p>*/}
-                                            {/*                      Avaiable Sizes:{" "}*/}
-                                            {/*                      {product.p_id.map((x) => (*/}
-                                            {/*                          <span>*/}
+                                            {/*<p>*/}
+                                            {/*    Avaiable Sizes:{" "}*/}
+                                            {/*    {product.p_id.map((x) => (*/}
+                                            {/*        <span>*/}
                                             {/*  {" "}*/}
-                                            {/*                              <button className="button">{x}</button>*/}
+                                            {/*            <button className="button">{x}</button>*/}
                                             {/*</span>*/}
-                                            {/*                      ))}*/}
-                                            {/*                  </p>*/}
+                                            {/*    ))}*/}
+                                            {/*</p>*/}
                                             <div className="product-price">
                                                 <div>{(product.p_price)}</div>
                                                 <button
@@ -167,17 +165,17 @@ class Main extends Component {
                             </Modal>
                         )}
                     </div>
-
+                    <MainCart/>
 
                     <div style={{justifyContent: 'center'}}>
 
                         <Button variant="outlined">더보기</Button>
                     </div>
 
-
                 </div>
-            </>
-        );
+            </div>
+
+    );
     }
 }
 
