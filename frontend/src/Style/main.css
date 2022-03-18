@@ -1,10 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 body{
     margin: 0;
     height: 2000px;
 }
 
 *{
-    font-family: 'Noto Sans KR', sans-serif;
     list-style: none;
     text-decoration: none;
     border-collapse: collapse;
@@ -13,9 +13,6 @@ body{
     color: #000;
 }
 
-
-
-
 ul.li {
     list-style: none;
 }
@@ -23,13 +20,11 @@ ul.li {
 
 .navbar {
     display: flex;
+    font-family: "Comfortaa";
     justify-content: space-between;
     font-size: 1.5em;
-    align-items: center;
-    background-color: white;
-    padding : 28px 36px;
+    padding-left: 15px;
 }
-
 
 /* -------------------------------------------------------------------------------------------------- */
 
@@ -94,7 +89,9 @@ ul.n-list > li > a{
 }
 
 section{
+    background: url("C:\Users\smhrd\Desktop\mindchat fxxk\mindchat fxxk\mindchat\frontend\public\images\1.jpg") fixed;
     height: 735px;
+    
 }
 
 
@@ -102,13 +99,13 @@ section{
 
 .mainshow {
 
-    font-family: "Times New Roman";
+    font-family: 'Questrial', sans-serif;
     font-size: 5em;
-    width: 600px;
+    width: 1000px;
     color : white;
     position: absolute !important;
     top: 230px;
-    left: 40vW;
+    left: 25vW;
     animation: slide 0.5s;
     text-align : center;
 }
@@ -123,7 +120,7 @@ section{
 }
 
 h4{
-    font-family: "Times New Roman";
+    font-family: 'Questrial', sans-serif;
     font-size: 1.5em;
     font-weight: normal;
     width: 600px;
@@ -131,7 +128,7 @@ h4{
     position: absolute;
     top: 400px;
     left: 466px;
-    text-align: center;
+    text-align: left;
     animation: slide 1s;
 }
 
@@ -159,6 +156,7 @@ h4{
     height:150px;
     margin-top:-132px;
     background: #f1f2f3;
+    font-family: "Comfortaa";
 }
 
 .main_text0 > h3{

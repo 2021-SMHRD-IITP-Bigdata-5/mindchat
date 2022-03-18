@@ -6,19 +6,18 @@ class Delivery extends Component {
     render() {
         return (
             <body>
-            <div className="title">
-                <h1>MY SHOPPING</h1>
-                <a className="title_a" href="../components/Main.jsx"><h1>MIND CHAT</h1></a>
+             <div className="title" style={{marginTop: '30px'}}>
+                <h1>My Shopping</h1>
+                <Link to="/Main" className="title_a"><h3>MIND CHAT</h3></Link>
             </div>
 
             <div className="menu">
                 <ul className="menu_ul"  style={{listStyle:'none'}}>
-                    <li> <Link to="/main/Cart"><strong>cart</strong></Link></li>
-                    <li><Link to="/main/Cart/Order">order</Link></li>
-                    <li><Link to="/main/Cart/Delivery">delivery</Link></li>
-                    <li><Link to="/main/Cart/Coupon">coupon</Link></li>
-                    <li><Link to="/main/Cart/Mileage">mileage</Link></li>
-                    <li><Link to="/main/Cart/Event">event</Link></li>
+                    <li><Link to="/Cart" className='temp'>Cart</Link></li>
+                    <li><Link to="/Order" className='temp'>Order</Link></li>
+                    <li><Link to="/Delivery" className='temp'><strong>Delivery</strong></Link></li>
+                    <li><Link to="/Coupon" className='temp'>Coupon</Link></li>
+                    <li><Link to="/Mileage" className='temp'>Mileage</Link></li>
                 </ul>
             </div>
             <hr />

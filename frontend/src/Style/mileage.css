@@ -1,3 +1,13 @@
+*, .temp{
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin:0px;
+    padding: 0px;
+    color: #000;
+}
+
+
 .title{
     align-items: center;
     display: flex;
@@ -11,11 +21,12 @@
 }
 
 .title > a{
-    left:10px;
+    left:30px;
     position: absolute;
     text-decoration: none;
     color: #000;
     text-align: left;
+
 }
 
 .menu{
@@ -29,6 +40,11 @@
     display: flex;
     justify-content: space-between;
     width: 25vw;
+    
+}
+.menu_ul li{
+    text-decoration: none;
+    color: rgb(0, 204, 143);
 }
 
 
@@ -39,36 +55,30 @@
 
 .text{
     text-align: center;
-    border-right-width: 0px;
-    border-left-width: 0px;
-    border-bottom-width: 0px;
-    border-top-width: 0px;
+    
 }
-
-.text1{
-    left:400px;
-    position: absolute;
+.text1 li{
+    text-align: left;
+    left: 600px;
+    position: absolute; 
+    
 }
-
-
-.text1 > li{
-    align-items: left;
-}
-
 
 .text2{
     right:600px;
-    position: absolute;
+    left: 1100px;
+    position: absolute;  
+    bottom: 525px;
 }
 
-.text2 >i{
-    align-items: right;
+.text2 > li{
+    text-align: left;
 }
 
 .table{
     width: 93%;
     height: 300px;
     border: 25px;
-    solid-color:  #F5F5F5;
+    border-radius:  #a71d1d;
     margin-left: 60px;
 }

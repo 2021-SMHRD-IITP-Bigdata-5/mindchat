@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+
 #chat1 {
     position: absolute;
     text-align: center;
@@ -24,6 +27,7 @@
     display: flex;
     justify-content:center;
     height: 5%;
+    font-family: "Comfortaa";
 }
 
 .title > h1{
@@ -43,6 +47,8 @@
     display: flex;
     justify-content: center;
     height: 55px;
+    font-family: "Comfortaa";
+    text-decoration-line: none;
 }
 
 .menu_ul{
@@ -50,6 +56,7 @@
     display: flex;
     justify-content: space-between;
     width: 25vw;
+    text-decoration-line: none;
 }
 
 

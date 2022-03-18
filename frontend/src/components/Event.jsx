@@ -6,45 +6,32 @@ class Event extends Component {
     render() {
         return (
             <body>
-            <div className="title">
-                <h1>MY SHOPPING</h1>
-                <a href="../components/Main.jsx"><h1>MIND CHAT</h1></a>
-            </div>
-
-            <div className="menu">
-                <ul className="menu_ul"  style={{listStyle:'none'}}>
-                    <li> <Link to="/main/Cart"><strong>cart</strong></Link></li>
-                    <li><Link to="/main/Cart/Order">order</Link></li>
-                    <li><Link to="/main/Cart/Delivery">delivery</Link></li>
-                    <li><Link to="/main/Cart/Coupon">coupon</Link></li>
-                    <li><Link to="/main/Cart/Mileage">mileage</Link></li>
-                    <li><Link to="/main/Cart/Event">event</Link></li>
-                </ul>
-            </div>
-            <hr />
+            <div className="title" style={{marginTop: '30px'}}>
+                <h1>Event</h1>
+                <Link to="/Main"><h3>MIND CHAT</h3></Link>
+            </div><br/><br/>
+            <hr/><br/><br/>
                 <div>
                     <table>
                         <tr>
                             <td className="image">
-                                <a href="#">
+                                <a href="#" style={{paddingLeft: '220px'}}>
                                     <img src="//www.afterblow-scent.com/file_data/afterblow/gallery/2022/01/06/10ff20abe099f6ea12a3974cc086d325.jpg" /></a>
-
-                                <a href="#">
+                                <a href="#" style={{paddingLeft: '80px'}}>
                                     <img src="//www.afterblow-scent.com/file_data/afterblow/gallery/2021/12/21/543f9d809cdab5e3d88cee113d2d6db3.jpg" /></a>
-
-                                <a href="#">
+                                <a href="#" style={{paddingLeft: '80px'}}>
                                     <img src="//www.afterblow-scent.com/file_data/afterblow/gallery/2021/12/22/de54d8481a74d8d3b561bb3c3fcc1d23.jpg" /></a>
                             </td>
                         </tr>
                     </table>
-                    <br />
-                        <a style={{paddingRight: '30px', paddingLeft: '50px'}}><strong>MIND CHAT Launching Event (1/10 - 1/31)</strong></a>
-                        <a style={{paddingRight: '200px', paddingLeft: '120px'}}><strong>MIND CHAT New Member Event</strong></a>
+                    <br/>
+                        <a style={{paddingRight: '30px', paddingLeft: '260px'}}><strong>MIND CHAT Launching Event (3/28 - 4/30)</strong></a>
+                        <a style={{paddingRight: '260px', paddingLeft: '190px'}}><strong>MIND CHAT New Member Event</strong></a>
                         <a><strong>MIND CHAT Membership Benefits</strong></a>
-                        <br/><br/>
-                            <a style={{paddingRight: '30px', paddingLeft: '150px'}}>2021-12-25</a>
-                            <a style={{paddingRight: '30px', paddingLeft: '350px'}}>2022-03-02</a>
-                            <a style={{paddingRight: '30px', paddingLeft: '320px'}}>2022-03-02</a>
+                        <br/>
+                        <a style={{paddingLeft: '380px'}}>Web Application</a>
+                        <a style={{paddingLeft: '450px'}}>Branding</a>
+                        <a style={{paddingLeft: '480px'}}>Website</a>
                 </div>
             </body>
         );

@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 import {addToCart} from "../actions/cartActions";
 import Filter from "../components/Filter";
 import MainCart from "./MainCart";
+import "../Style/list.css";
 
 class Main extends Component {
     constructor(props) {
@@ -35,30 +36,27 @@ class Main extends Component {
     render() {
         const {product} = this.state;
         return (
-            <div>
-                <nav className="navbar">
-                    <div>MIND CHAT</div>
+            <div><br/>
+                <nav className="navbar" style={{paddingLeft:'15px'}}>
+                    <div><h3>MIND CHAT</h3></div>
                     <ul className="n-list">
-                        <li><Link to="/perfume">Perfume</Link></li>
+                        <li><Link to="/perfume">Perfume &nbsp;</Link></li>
                         <li><Link to="/About">About</Link></li>
-                        <li><Link to="/Order">Order</Link></li>
-                        <li><Link to="/Cart">Cart</Link></li>
-                        <li><Link to="/Event">event</Link></li>
-                        <li><Link to="/FAQ">FAQ</Link></li>
+                        <li><Link to="/Cart" style={{paddingLeft:'0px'}}>Mypage</Link></li>
+                        <li><Link to="/Event">Event</Link></li>
+                        <li><Link to="/FAQ" style={{paddingLeft:'0px'}}>FAQ</Link></li>
                     </ul>
                 </nav>
                 <section>
-                    <h1 className='mainshow'>
-                        It smells great
-                    </h1>
-                    <h4> Expectaion
-                        Predetermined resentments
-                    </h4>
+                    <h1 className='mainshow'>New Season, New Scent</h1>
+                    <br></br>
+                    <h4> Perfume blends with one's unique scent <br></br>To create attractive silence</h4>  
+                    
                 </section>
 
                 <div className="main_text0">
                     <h3>BEST COLLECTION</h3>
-                    <div className="contents1">나만 알고싶은 설레는 향</div>
+                    <div className="contents1">What is your flavor?</div>
                 </div>
 
 

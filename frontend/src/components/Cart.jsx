@@ -17,18 +17,17 @@ class Cart extends Component{
     render(){
         return (
             <body>
-                <div className="title">
-                    <h1>MY SHOPPING</h1>
-                    <a className="title_a" href="../components/Main.jsx"><h1>MIND CHAT</h1></a>
+                <div className="title" style={{marginTop: '30px'}}>
+                    <h1>My Shopping</h1>
+                    <Link to="/Main" className="title_a" ><h3>MIND CHAT</h3></Link>
                 </div>
                 <div className="menu">
                     <ul className="menu_ul"  style={{listStyle:'none'}}>
-                        <li><Link to="/main/Cart"><strong>cart</strong></Link></li>
-                        <li><Link to="/main/Cart/Order">order</Link></li>
-                        <li><Link to="/main/Cart/Delivery">delivery</Link></li>
-                        <li><Link to="/main/Cart/Coupon">coupon</Link></li>
-                        <li><Link to="/main/Cart/Mileage">mileage</Link></li>
-                        <li><Link to="/main/Cart/Event">event</Link></li>
+                        <li><Link to="/Cart" className='temp'><strong>Cart</strong></Link></li>
+                        <li><Link to="/Order" className='temp'>Order</Link></li>
+                        <li><Link to="/Delivery" className='temp'>Delivery</Link></li>
+                        <li><Link to="/Coupon" className='temp'>Coupon</Link></li>
+                        <li><Link to="/Mileage" className='temp'>Mileage</Link></li>
                     </ul>
                 </div>
                 <hr/>
@@ -39,14 +38,14 @@ class Cart extends Component{
                                 <td className="table_td">
                                     <input type="checkbox" />
                                 </td>
-                                <td className="table_img">이미지</td>
-                                <td className="table_information">상품정보</td>
-                                <td className="table_price">판매가</td>
-                                <td className="table_reserves">적립금</td>
-                                <td className="table_category">배송구분</td>
-                                <td className="table_fee">배송비</td>
-                                <td className="table_sum">합계</td>
-                                <td className="table_selection">선택</td>
+                                <td className="table_img">image</td>
+                                <td className="table_information">item info</td>
+                                <td className="table_price">price</td>
+                                <td className="table_reserves">save money</td>
+                                <td className="table_category">shipping</td>
+                                <td className="table_fee">delivery price</td>
+                                <td className="table_sum">total</td>
+                                <td className="table_selection">select</td>
                             </tr>
                             <tr>
                                 <td className="table_box">
@@ -88,16 +87,16 @@ class Cart extends Component{
                             <br/><br/><br/>
                                 <tr style={{fontSize: '160%', textAlign:'left'}}>
                                     <td><h1
-                                        style={{marginBottom: '0px', marginTop: '25px'}}>&nbsp향숙이</h1>&nbsp&nbsp언제!
+                                        style={{marginBottom: '0px', marginTop: '25px'}}>&nbsp;향숙이</h1>&nbsp;&nbsp;언제!
                                         어디서나!<br/>
-                                            &nbsp&nbsp간편하게 1:1 상담 <br/>
+                                            &nbsp;&nbsp;간편하게 1:1 상담 <br/>
                                             <hr style={{width: '390px'}} /></td>
                                 </tr>
                                 <tr>
                                     <td style={{paddingBottom: '70px'}}>
                                         <img id="img1" src="" style={{paddingLeft: '25px'}} />
                                             <a href="" style={{textDecoration: 'none', color:'#000'}}>
-                                                <h1 style={{marginTop:'0px', marginBottom:'0px'}}>쇼핑&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &#10095;</h1>
+                                                <h1 style={{marginTop:'0px', marginBottom:'0px'}}>쇼핑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#10095;</h1>
                                             </a>
                                             <p style={{paddingRight: '130px', marginTop: '0px'}}>더보기</p>
                                     </td>

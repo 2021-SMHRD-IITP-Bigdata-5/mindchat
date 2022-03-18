@@ -1,0 +1,140 @@
+.right-menu {
+	float: right;
+    margin-top: 45px;
+    margin-right: 5%;
+    font-family: Roboto;
+	position: fixed;
+    right: 0;
+	z-index:1040;
+	background: transparent;
+}
+
+.open-menu-title {
+	font-size: 3.8em;
+	letter-spacing: .03em;
+	line-height: 2em;
+	font-weight: 600;
+	color: #fff;
+	opacity: .2;
+}
+
+.btn-primary-menu:focus {
+	outline: none;
+}
+
+
+.modal {
+	background-color: rgba(22, 22, 22, 0.62);
+}
+
+.btn-primary-menu {
+    color: #161616;
+    background-color: transparent;
+    border-color: transparent;
+	font-size: 17px;
+	font-weight: 600;
+	z-index: 1040;
+	font-family: roboto;
+    letter-spacing: .03em;
+	outline: none;
+}
+
+.btn-primary-menu:hover {
+    color: #999;
+    background-color: #fff;
+    border-color: #fff;
+	font-size: 17px;
+	font-weight: 600;
+	z-index:1040;
+	font-family: roboto;
+    letter-spacing: .03em;
+	outline: none;
+}
+
+.modal-backdrop {
+    position: initial;
+}
+
+.modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.0);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #161616;
+    border: 1px solid #999;
+    border: 0px solid rgba(0,0,0,0.2);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.0);
+    box-shadow: 0 3px 9px rgba(0,0,0,0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.modal-dialog {
+    width: 100%;
+    margin: 0 auto;
+	background-color: #161616;
+	height: 100vh;
+}
+
+.menu-links {
+	font-size: 1.5em;
+	font-family: roboto;
+	font-weight: 500;
+	letter-spacing: .03em;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+    line-height: 2em;
+}
+
+.menu-links-on {
+	font-size: 1.5em;
+	font-family: roboto;
+	font-weight: 500;
+	letter-spacing: .03em;
+	color: #999;
+	text-align: center;
+    line-height: 2em;
+}
+
+.menu-links:hover {
+	color: #999;
+	text-decoration: none;
+}
+
+.menu-t {
+	text-align: center;
+}
+
+.btn {
+	outline: none !important;
+}
+
+.menu-close {
+    float: none;
+    font-size: 1.8em;
+    font-weight: 100;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 0 transparent;
+    opacity: 1;
+    filter: alpha(opacity=20);
+	background: transparent;
+    border: 0px;
+	margin-top: 20px;
+	outline: none;
+}
+
+.modal fade in {
+	padding-right: 0px;
+}
+
+.modal-header-menu {
+	border: 0px;
+	padding: 30px;
+	padding-top: 20%;
+}

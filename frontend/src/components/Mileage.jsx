@@ -1,60 +1,52 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import "../Style/mileage.css";
 
 class Mileage extends Component {
     render() {
         return (
             <body>
-            <div className="title">
-                <h1>MY SHOPPING</h1>
-                <a className="title_a" href="../components/Main.jsx"><h1>MIND CHAT</h1></a>
+            <div className="title" style={{marginTop: '30px'}}>
+                <h1>My Shopping</h1>
+                <Link to="/Main" className="title_a"><h3>MIND CHAT</h3></Link>
             </div>
-
             <div className="menu">
-                <ul className="menu_ul"  style={{listStyle:'none'}}>
-                    <li><Link to="/main/Cart"><strong>cart</strong></Link></li>
-                    <li><Link to="/main/Cart/Order">order</Link></li>
-                    <li><Link to="/main/Cart/Delivery">delivery</Link></li>
-                    <li><Link to="/main/Cart/Coupon">coupon</Link></li>
-                    <li><Link to="/main/Cart/Mileage">mileage</Link></li>
-                    <li><Link to="/main/Cart/Event">event</Link></li>
+                <ul className="menu_ul"  style={{listStyle:'none', textDecoration:'none'}}>
+                    <li><Link to="/Cart" className='temp'>Cart</Link></li>
+                    <li><Link to="/Order" className='temp'>Order</Link></li>
+                    <li><Link to="/Delivery" className='temp'>Delivery</Link></li>
+                    <li><Link to="/Coupon" className='temp'>Coupon</Link></li>
+                    <li><Link to="/Mileage" className='temp'><strong>Mileage</strong></Link></li>
                 </ul>
             </div>
             <hr />
             <div>
-                <table className="table">
+            <table className="table">
                     <tr>
                         <td className="text">
-                            <ul className="text1">
+                            <ul className="text1" >
                                 <li>
-                                    <strong >> 총적립금</strong>
-                                    <span> 0원</span>
-                                </li><br />
-                                <li>
-                                    <strong>> 사용된 적립금</strong>
-                                    <span> 0원</span>
-                                </li><br/>
-                                <li>
-                                    <strong >> 환불예정 적립금</strong>
-                                    <span> 0원</span>
-                                </li>
+                                    <strong >> &nbsp; 총적립금</strong>
+                                    <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        0원</span><br/><br/>
+                                    <strong>> &nbsp; 사용된 적립금</strong>
+                                    <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0원</span><br/><br/>
+                                    <strong >> &nbsp; 환불예정 적립금</strong>
+                                    <span> &nbsp;&nbsp;&nbsp;&nbsp; 0원</span>
+                                </li>                           
                             </ul>
                             <ul className="text2">
                                 <li>
-                                    <strong>> 사용가능 적립금</strong>
-                                    <span> 0원</span>
-                                </li><br/>
-                                <li>
-                                    <strong>> 미가용 적립금</strong>
-                                    <span> 0원</span>
+                                    <strong>> &nbsp; 사용가능 적립금</strong>
+                                    <span> &nbsp; 0원</span><br/><br/>
+                                    <strong>> &nbsp; 미가용 적립금</strong>
+                                    <span> &nbsp;&nbsp;&nbsp;&nbsp; 0원</span><br/><br/>
                                 </li>
                             </ul>
-                            <br/><br/><br/><br/><br/><br/>
                         </td>
                     </tr>
                 </table>
             </div>
-
         </body>
         );
     }

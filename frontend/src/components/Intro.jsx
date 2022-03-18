@@ -14,8 +14,8 @@ function Intro() {
                         <p>Expectations are predetermined resentments :)</p>
                     </div>
 
-                    <Link to="/main">
-                        Shop now
+                    <Link to="/main"  className='temp'>
+                        Shop now !
                     </Link>
 
                 </div>
@@ -24,6 +24,7 @@ function Intro() {
             <div className="bg">
 
                 <video id="video" muted autoPlay='true' loop>
+                    <source src="/video/INTRO.mp4" type="video/mp4" />
                 </video>
             </div>
         </body>
