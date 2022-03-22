@@ -88,23 +88,32 @@ class Main extends Component {
                     {/*    ))}*/}
                     {/*</ImageList>*/}
 
+                    {/* 상품 정렬 코드 시작*/}
                     <Filter/>
+                    {/*필터 컴포넌트*/}
                     <div>
                         <Fade>
+                            {/*CSS 페이드효과*/}
                             {!this.props.products ? (
+                                // 프롭스 프로덕트 유무 체크후 없다면 로딩표시 , 있다면 뿌려준다. 삼항연산자
                                 <div>Loading...</div>
                             ) : (
                                 <ul className="products">
                                     {this.props.products.map((product) => (
+                                        // 프롭스 프로덕트 product map 함수 >> product 돌면서 업데이트
                                         <li key={product.p_seq}>
+                                            {/*map 함수에서 앨리먼트 안정적 고유성을 위해 key값 부여! 고유성이므로 p_seq */}
                                             <div className="product">
                                                 <a
                                                     href={"#" + product.p_seq}
                                                     onClick={() => this.openModal(product)}
                                                 >
+                                                    {/* 해당 상품 온클릭 모달 오픈 */}
                                                     <img width="300px"
                                                         src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
                                                         alt={product.p_id}/>
+                                                    {/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/}
+                                                    {/*이미지 크기 및 src 가데이터 >> 수정 필요 */}
                                                     <p>{product.p_name}</p>
                                                 </a>
                                                 <div className="product-price">
@@ -113,6 +122,7 @@ class Main extends Component {
                                                         onClick={() => this.props.addToCart(product)}
                                                         className="button primary"
                                                     >
+                                                        {/* 해당 상품 온클릭 프롭스 addToCart 디스패치 >> 카트 리듀서 */}
                                                         Add To Cart
                                                     </button>
                                                 </div>
@@ -123,7 +133,9 @@ class Main extends Component {
                             )}
                         </Fade>
                         {product && (
+                            // JS 연산자 조건부 랜더링  TRUE && EXP >> EXP 랜더 , FALSE && EXP >> FALSE 랜더
                             <Modal isOpen={true} onRequestClose={this.closeModal} ariaHideApp={false}>
+                                {/* 모달 체크하고 클로즈 모달 실행 */}
                                 <Zoom>
                                     <button className="close-modal" onClick={this.closeModal}>
                                         x
@@ -136,15 +148,13 @@ class Main extends Component {
                                                 <strong>{product.p_id}</strong>
                                             </p>
                                             <p>{product.p_name}</p>
-                                            {/*<p>*/}
-                                            {/*    Avaiable Sizes:{" "}*/}
-                                            {/*    {product.p_id.map((x) => (*/}
-                                            {/*        <span>*/}
-                                            {/*  {" "}*/}
-                                            {/*            <button className="button">{x}</button>*/}
-                                            {/*</span>*/}
-                                            {/*    ))}*/}
-                                            {/*</p>*/}
+                                            <p>
+                                                주문 가능 수량 :{" "}
+                                                {product.p_stock_cnt}
+                                                <span>
+                                              {" "}
+                                            </span>
+                                            </p>
                                             <div className="product-price">
                                                 <div>{(product.p_price)}</div>
                                                 <button

@@ -17,10 +17,10 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping(value = "/product")
 // 루트페이지 외에는 권한 오류남 !!! 수정 필요
 
-public class ProductController {
+public class ProductController     {
 
 	@Autowired
 	ProductService productService;
@@ -50,13 +50,13 @@ public class ProductController {
 
 	// 0315 추가 유진
 	@CrossOrigin(origins = "http://localhost:3001")
-	@GetMapping("/")
+	@GetMapping("/list")
 	public List<ProductInfo> productsList() {
 		System.out.println("프로덕트리스트 출력 성공");
 		return productService.productsList();
 
 	}
-    // 0315 추가 끝
+	// 0315 추가 끝
 
 
 }

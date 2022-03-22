@@ -1,30 +1,33 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Fade from "react-reveal/Fade";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
-import { removeFromCart } from "../actions/cartActions";
-import { createOrder, clearOrder } from "../actions/orderActions";
+import {removeFromCart} from "../actions/cartActions";
+import {createOrder, clearOrder} from "../actions/orderActions";
 
 class MainCart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            email: "",
-            address: "",
+            order_code: "",
+            user_id: "",
+            order_status: "",
+            order_memo: "",
             showCheckout: false,
         };
     }
+
     handleInput = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({[e.target.name]: e.target.value});
     };
     createOrder = (e) => {
         e.preventDefault();
         const order = {
-            name: this.state.name,
-            email: this.state.email,
-            address: this.state.address,
+            order_code: this.state.order_code,
+            user_id: this.state.user_id,
+            order_status: this.state.order_status,
+            order_memo: this.state.order_memo,
             cartItems: this.props.cartItems,
             total: this.props.cartItems.reduce((a, c) => a + c.p_price * c.count, 0),
         };
@@ -33,8 +36,9 @@ class MainCart extends Component {
     closeModal = () => {
         this.props.clearOrder();
     };
+
     render() {
-        const { cartItems, order } = this.props;
+        const {cartItems, order} = this.props;
         return (
             <div>
                 {cartItems.length === 0 ? (
@@ -46,30 +50,30 @@ class MainCart extends Component {
                 )}
 
                 {order && (
-                    <Modal isOpen={true} onRequestClose={this.closeModal}>
+                    <Modal isOpen={true} onRequestClose={this.closeModal} ariaHideApp={false}>
                         <Zoom>
                             <button className="close-modal" onClick={this.closeModal}>
                                 x
                             </button>
                             <div className="order-details">
                                 <h3 className="success-message">Your order has been placed.</h3>
-                                <h2>Order {order._id}</h2>
+                                <h2>Order {order.order_seq}</h2>
                                 <ul>
                                     <li>
-                                        <div>Name:</div>
-                                        <div>{order.name}</div>
+                                        <div>order_code:</div>
+                                        <div>{order.order_code}</div>
                                     </li>
                                     <li>
-                                        <div>Email:</div>
-                                        <div>{order.email}</div>
+                                        <div>user_id:</div>
+                                        <div>{order.user_id}</div>
                                     </li>
                                     <li>
-                                        <div>Address:</div>
-                                        <div>{order.address}</div>
+                                        <div>order_status:</div>
+                                        <div>{order.order_status}</div>
                                     </li>
                                     <li>
-                                        <div>Date:</div>
-                                        <div>{order.createdAt}</div>
+                                        <div>order_memo:</div>
+                                        <div>{order.order_memo}</div>
                                     </li>
                                     <li>
                                         <div>Total:</div>
@@ -78,7 +82,7 @@ class MainCart extends Component {
                                     <li>
                                         <div>Cart Items:</div>
                                         <div>
-                                            {order.cartItems.map((x) => (
+                                            {order.cartItems && order.cartItems.map((x) => (
                                                 <div>
                                                     {x.count} {" x "} {x.title}
                                                 </div>
@@ -97,12 +101,14 @@ class MainCart extends Component {
                                 {cartItems.map((item) => (
                                     <li key={item.p_seq}>
                                         <div>
-                                            <img src={item.image} alt={item.title}></img>
+                                            <img width="100px"
+                                                 src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                                 alt={item.p_id}></img>
                                         </div>
                                         <div>
-                                            <div>{item.title}</div>
+                                            <div>{item.p_name}</div>
                                             <div className="right">
-                                                {(item.price)} x {item.count}{" "}
+                                                {(item.p_price)} x {item.count}{" "}
                                                 <button
                                                     className="button"
                                                     onClick={() => this.props.removeFromCart(item)}
@@ -123,12 +129,12 @@ class MainCart extends Component {
                                     <div>
                                         Total:{" "}
                                         {(
-                                            cartItems.reduce((a, c) => a + c.price * c.count, 0)
+                                            cartItems.reduce((a, c) => a + c.p_price * c.count, 0)
                                         )}
                                     </div>
                                     <button
                                         onClick={() => {
-                                            this.setState({ showCheckout: true });
+                                            this.setState({showCheckout: true});
                                         }}
                                         className="button primary"
                                     >
@@ -142,31 +148,24 @@ class MainCart extends Component {
                                         <form onSubmit={this.createOrder}>
                                             <ul className="form-container">
                                                 <li>
-                                                    <label>Email</label>
-                                                    <input
-                                                        name="email"
-                                                        type="email"
-                                                        required
-                                                        onChange={this.handleInput}
-                                                    ></input>
+                                                    <label>order_code</label>
+                                                    <input name="order_code" type="text" required
+                                                           onChange={this.handleInput}></input>
                                                 </li>
                                                 <li>
-                                                    <label>Name</label>
-                                                    <input
-                                                        name="name"
-                                                        type="text"
-                                                        required
-                                                        onChange={this.handleInput}
-                                                    ></input>
+                                                    <label>user_id</label>
+                                                    <input name="user_id" type="text" required
+                                                           onChange={this.handleInput}></input>
                                                 </li>
                                                 <li>
-                                                    <label>Address</label>
-                                                    <input
-                                                        name="address"
-                                                        type="text"
-                                                        required
-                                                        onChange={this.handleInput}
-                                                    ></input>
+                                                    <label>order_status</label>
+                                                    <input name="order_status" type="text" required
+                                                           onChange={this.handleInput}></input>
+                                                </li>
+                                                <li>
+                                                    <label>order_memo</label>
+                                                    <input name="order_memo" type="text" required
+                                                           onChange={this.handleInput}></input>
                                                 </li>
                                                 <li>
                                                     <button className="button primary" type="submit">
@@ -191,5 +190,5 @@ export default connect(
         order: state.order.order,
         cartItems: state.cart.cartItems,
     }),
-    { removeFromCart, createOrder, clearOrder }
+    {removeFromCart, createOrder, clearOrder}
 )(MainCart);

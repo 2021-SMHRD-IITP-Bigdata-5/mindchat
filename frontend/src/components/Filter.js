@@ -27,21 +27,18 @@ class Filter extends Component {
             <option value="highest">Highest</option>
           </select>
         </div>
-        <div className="filter-size">
+        <div className="filter-category">
           Filter{" "}
           <select
-            value={this.props.size}
+            value={this.props.category}
             onChange={(e) =>
               this.props.filterProducts(this.props.products, e.target.value)
             }
           >
-            <option value="">ALL</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
+              <option value="">ALL</option>
+              <option value="category1">category1</option>
+              <option value="category2">category2</option>
+              <option value="category3">category3</option>
           </select>
         </div>
       </div>
@@ -50,7 +47,7 @@ class Filter extends Component {
 }
 export default connect(
   (state) => ({
-    size: state.products.size,
+    size: state.products.p_category,
     sort: state.products.sort,
     products: state.products.items,
     filteredProducts: state.products.filteredItems,

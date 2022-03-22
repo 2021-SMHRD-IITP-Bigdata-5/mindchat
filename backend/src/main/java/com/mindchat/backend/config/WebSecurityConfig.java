@@ -21,7 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests().antMatchers("/", "/auth/**").permitAll() //
+                .authorizeRequests().antMatchers("/product/**", "/auth/**","/order/**").permitAll() //
                 .anyRequest().authenticated(); // 그 밖의 경로
     }
 

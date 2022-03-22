@@ -30,7 +30,7 @@ public class TokenProvider {
                 .setIssuedAt(new Date())                         //iat  발급시간
                 .compact();
     };
-//----------------------------------------------------------------
+    //----------------------------------------------------------------
     public String validateAndGetUserId(String token){
         Claims claims = Jwts.parser()
                 .setSigningKey(SECRET_KEY)

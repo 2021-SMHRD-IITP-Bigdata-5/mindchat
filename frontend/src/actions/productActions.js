@@ -1,9 +1,9 @@
 import { FETCH_PRODUCTS } from "../types";
-import { FILTER_PRODUCTS_BY_SIZE, ORDER_PRODUCTS_BY_PRICE } from "../types";
+import { FILTER_PRODUCTS_BY_CATEGORY, ORDER_PRODUCTS_BY_PRICE } from "../types";
 
 const { REACT_APP_BACKEND_LOCAL_PORT } = process.env;
 export const getProducts = () => async (dispatch) => {
-  const res = await fetch(`${REACT_APP_BACKEND_LOCAL_PORT}/ `);
+  const res = await fetch(`${REACT_APP_BACKEND_LOCAL_PORT}/product/list `);
   const data = await res.json();
 
   console.log("겟프로덕트데이터",data);
@@ -14,31 +14,31 @@ export const getProducts = () => async (dispatch) => {
   });
 };
 
-export const filterProducts = (products, size) => (dispatch) => {
+export const filterProducts = (products, category) => (dispatch) => {
   dispatch({
-    type: FILTER_PRODUCTS_BY_SIZE,
+    type: FILTER_PRODUCTS_BY_CATEGORY,
     payload: {
-      size: size,
+      category: category,
       items:
-        size === ""
-          ? products
-          : products.filter((x) => x.availableSizes.indexOf(size) >= 0),
+          category === ""
+              ? products
+              : products.filter((x) => x.p_cat.indexOf(category) >= 0),
     },
   });
 };
 export const sortProducts = (filteredProducts, sort) => (dispatch) => {
   const sortedProducts = filteredProducts.slice();
   if (sort === "latest") {
-    sortedProducts.sort((a, b) => (a._id > b._id ? 1 : -1));
+    sortedProducts.sort((a, b) => (a.p_seq > b.p_seq ? 1 : -1));
   } else {
     sortedProducts.sort((a, b) =>
-      sort === "lowest"
-        ? a.price > b.price
-          ? 1
-          : -1
-        : a.price > b.price
-        ? -1
-        : 1
+        sort === "lowest"
+            ? a.p_price > b.p_price
+                ? 1
+                : -1
+            : a.p_price > b.p_price
+                ? -1
+                : 1
     );
   }
   console.log(sortedProducts);
