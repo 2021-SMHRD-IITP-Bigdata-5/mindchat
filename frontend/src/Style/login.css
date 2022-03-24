@@ -1,0 +1,37 @@
+.button{
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.5s;
+    width: 224px;
+}
+
+.contents button:hover {
+    background-color: white;
+}
+
+@media(max-width:769px) {
+
+    #contents h1{
+        font-size:80px;
+    }
+
+    #contents p{
+        font-size:20px;
+    }
+
+    #contents a{
+        font-size: 14px;
+    }
+
+}
+
+.loginmain{
+    background-color: lightgrey;
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+

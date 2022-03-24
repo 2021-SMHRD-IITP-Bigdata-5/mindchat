@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mindchat.backend.mapper.ImgUploadMapper">
+
+
+    <insert id="insertImg" parameterType="com.mindchat.backend.domain.ProductImgUploadVO">
+        INSERT INTO tbl_image(p_seq,img_title , img_filename1 , img_file1 , img_file2 )
+        VALUES('10','test', #{img_filename1 }, #{img_file1 }, #{img_file2 })
+    </insert>
+
+<!--    <update id ="insertImg" parameterType="com.mindchat.backend.domain.ProductImgUploadVO">-->
+<!--        UPDATE tbl_product SET p_id = #{p_id} WHERE p_seq=#{p_seq}-->
+<!--    </update>-->
+
+
+</mapper>

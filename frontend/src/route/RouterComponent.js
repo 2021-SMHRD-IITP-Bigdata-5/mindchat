@@ -10,6 +10,12 @@ import Event from "../components/Event"
 import Mileage from "../components/Mileage";
 import Order from "../components/Order";
 import Faq from "../components/Faq";
+import Login from "../components/Login";
+import CreateUser from "../components/CreateUser";
+import ProductUpload from "../components/ProductUpload";
+import Perfume from "../components/Perfume";
+import UploadPage from "../components/UploadPage";
+import About from "../components/About";
 
 const RouterComponent = () => {
     return (
@@ -24,6 +30,11 @@ const RouterComponent = () => {
                 <Route  path="/Mileage" component={Mileage} />
                 <Route  path="/Order" component={Order} />
                 <Route  path="/Faq" component={Faq} />
+                <Route  path="/Login" component={Login} />
+                <Route  path="/CreateUser" component={CreateUser} />
+                <Route path="/Perfume" component={Perfume}/>
+                <Route path="/UploadPage" component={UploadPage}/>
+                <Route path="/About" component={About}/>
             </Switch>
         </BrowserRouter>
     );

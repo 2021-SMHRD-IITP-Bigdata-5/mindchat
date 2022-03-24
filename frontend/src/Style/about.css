@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+body{
+    margin: 0;
+    height: 2000px;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin:0px;
+    padding: 0px;
+    color: #000;
+  }
+  
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul.li {
+    list-style: none;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    align-items: center;
+    background-color: white;
+    padding : 28px 36px;
+    font-family: "Comfortaa";
+}
+
+/* -----------About page css입니다!------------------------------------------------------------- */
+element.style {
+    letter-spacing: 0.1em;
+}
+
+.sub1 {
+    margin-top: 1400px;
+}
+
+.sub1 h2 {
+    line-height: 1.4;
+    padding: 3px 0;
+    color: black;
+    font-weight: 400;
+}
+
+.sub1 h2 {
+    font-size: 42px;
+}
+
+.sub1 .para p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #000;
+    font-weight: 300;
+    word-break: keep-all;
+    padding: 8px 0;
+}
+
+.sub img {
+    display : block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.sub img, .sub1, .para {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.eng {
+    margin-top: 100px;
+}
+
+
+.img, fieldset {
+    border : none;
+    vertical-align: top;
+    text-align: center;
+}
+
+#main{
+    background: url("https://pixabay.com/get/g2bb4cc116035521557cff0a2088cd9f7759f02f840953c7900ac4daa1f95781a98b850571370c5f17b5efc35354b618b5bea59bccd2e34d2243adc8da20c90e2fac43af036e46d2b65bfdca744c7cc4a_1920.jpg")-no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.title > a{
+    left:10px;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+}
+.chat1 {
+    position: absolute;
+    text-align: center;
+    border-radius: 70px;
+    background-color: #F5F5F5;
+    left: -7%;
+    width: 400px;
+    height: 700px;
+}
+.chat2 {
+    position: relative;
+    background-color: #000000;
+    right: 60px;
+}
+.chat{
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    
+}
+.chat_table{
+    position: relative;
+    right: 50px;
+    border-radius: 30px;
+    color: #000;
+    border: solid;
+    border-width: 2px;
+    
+}
+
+.chat_a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.chat_b{
+    font-size:180%;
+    width: 130px;
+    margin-left:95%;
+    margin-bottom: 20%;
+}
+

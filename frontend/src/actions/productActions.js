@@ -12,6 +12,8 @@ export const getProducts = () => async (dispatch) => {
     type: FETCH_PRODUCTS,
     payload: data,
   });
+
+  fetch(`${REACT_APP_BACKEND_LOCAL_PORT}/product/list `)
 };
 
 export const filterProducts = (products, category) => (dispatch) => {

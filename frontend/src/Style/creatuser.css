@@ -1,0 +1,60 @@
+.myButton {
+    border: none;
+    background: none;
+    border-radius: 19px;
+    display: inline-block;
+    cursor: pointer;
+    color: #778899;
+    font-family: Verdana;
+    font-size: 13px;
+    padding: 5px 11px;
+    text-decoration: none;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    background-color:#dfdfdf;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.fake_input_area{
+    border: 1px solid;
+    color: darkgrey;
+    border-radius: 5px;
+    width: 26vw;
+    height: 6vh;
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    background-color: rgb(211, 211, 211);
+    animation-name: mui-auto-fill-cancel;
+}
+
+
+.hide_input_area{
+    background: none;
+    border: none;
+    width: inherit;
+
+    box-sizing: content-box;
+    letter-spacing: inherit;
+
+
+    /*padding: 6px 0 7px;*/
+    /*min-width: 0;*/
+    /*animation-duration: 10ms;*/
+
+
+    /*border: 1px solid;*/
+    /*color: darkgrey;*/
+    /*border-radius: 5px;*/
+    /*width: 40vw;*/
+    /*height: 5vh;*/
+    /*display: flex;*/
+    /*text-align: left;*/
+    /*justify-content: center;*/
+    /*background-color: rgb(211, 211, 211);*/
+
+}

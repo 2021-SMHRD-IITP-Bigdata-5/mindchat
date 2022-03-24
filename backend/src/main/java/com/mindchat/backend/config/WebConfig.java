@@ -20,17 +20,17 @@ public class WebConfig implements WebMvcConfigurer {
                 .maxAge(3600);
     }
 
-//    //스태틱 경로
-//    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/static/"};
-//    //외부이미지 경로
-//    private final String resourcePath="file:///"+"C://Users/smhrd/stdStorage/img/";
-//    //경로 핸들러
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/**")
-//                .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS)
-//                .addResourceLocations(resourcePath);
-//    };
+    //스태틱 경로
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/static/"};
+    //외부이미지 경로
+    private final String resourcePath="file:///"+"C:\\Users\\smrhd\\Desktop\\mindchat\\frontend\\public\\assets\\";
+    //경로 핸들러
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS)
+                .addResourceLocations(resourcePath);
+    };
 
 
 

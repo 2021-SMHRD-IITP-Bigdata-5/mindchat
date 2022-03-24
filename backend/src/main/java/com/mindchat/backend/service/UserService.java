@@ -24,23 +24,25 @@ public class UserService {
             log.warn("already exist email");
         } else {
             userMapper.createUser(userInfo);
+            return userInfo;
         }
         return null;
     }
 
     ;
 
-    public UserInfo findByEmail(String email,
-                                String password) {
-        String db_pw = userMapper.selectUser(email).getUser_pw();
-        if (password.equals(db_pw)) {
-            return userMapper.selectUser(email);
+    public boolean findByEmail(String email) {
+        return userMapper.selectUser(email) != null;
+    }
 
-        } else {
+    public UserInfo checkPassword(String email,String password){
+        String db_pw = userMapper.selectUser(email).getUser_pw();
+        if(password.equals(db_pw)){
+            return userMapper.selectUser(email);
+        }else{
             return null;
         }
     }
-
     //복호화
     public UserInfo getByCredentials(String email,
                                      String password,

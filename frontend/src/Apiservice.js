@@ -2,7 +2,9 @@ import axios from 'axios';
 
 const { REACT_APP_BACKEND_LOCAL_PORT } = process.env;
 
+
 //  env로 옮겨서 경로 숨김
+
 
 class Apiservice {
     // Products
@@ -30,10 +32,6 @@ class Apiservice {
     // order 객체  ##### 객체 구성 + 전달 _id 미정
     addOrders(order){
         return axios.put(REACT_APP_BACKEND_LOCAL_PORT + 'orders/' + order._id, order)
-    }
-
-    main(){
-        return axios.get(REACT_APP_BACKEND_LOCAL_PORT)
     }
 
 }

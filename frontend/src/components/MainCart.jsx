@@ -102,7 +102,7 @@ class MainCart extends Component {
                                     <li key={item.p_seq}>
                                         <div>
                                             <img width="100px"
-                                                 src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                                 src={item.p_id}
                                                  alt={item.p_id}></img>
                                         </div>
                                         <div>

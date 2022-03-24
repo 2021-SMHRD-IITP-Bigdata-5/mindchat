@@ -59,34 +59,7 @@ class Main extends Component {
                     <div className="contents1">What is your flavor?</div>
                 </div>
 
-
                 <div style={{width: '100%', margin: '3ream auto', textAlign: '-webkit-center'}}>
-
-
-                    {/* Filter */}
-
-                    {/* Search */}
-
-                    {/* Cards*/}
-
-                    {/*이미지 부분*/}
-                    {/*<ImageList sx={{width: '80%', height: '500', margin: '30px', alignItems: 'center'}}>*/}
-                    {/*    {itemData.map((item) => (*/}
-                    {/*        <ImageListItem key={item.img}>*/}
-                    {/*            <img*/}
-                    {/*                src={`${item.img}?w=248&fit=crop&auto=format`}*/}
-                    {/*                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}*/}
-                    {/*                alt={item.title}*/}
-                    {/*                loading="lazy"*/}
-                    {/*            />*/}
-                    {/*            <ImageListItemBar*/}
-                    {/*                title={item.title}*/}
-                    {/*                subtitle={<span>by: {item.author}</span>}*/}
-                    {/*                position="below"*/}
-                    {/*            />*/}
-                    {/*        </ImageListItem>*/}
-                    {/*    ))}*/}
-                    {/*</ImageList>*/}
 
                     {/* 상품 정렬 코드 시작*/}
                     <Filter/>
@@ -110,7 +83,7 @@ class Main extends Component {
                                                 >
                                                     {/* 해당 상품 온클릭 모달 오픈 */}
                                                     <img width="300px"
-                                                        src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                                        src="assets/imageEZIwwEYG3Y8CPNbrDSKmAo11GtMJV1d5.jpg"
                                                         alt={product.p_id}/>
                                                     {/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/}
                                                     {/*이미지 크기 및 src 가데이터 >> 수정 필요 */}
@@ -141,7 +114,7 @@ class Main extends Component {
                                         x
                                     </button>
                                     <div className="product-details">
-                                        <img width="300px" src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f"
+                                        <img width="300px" src="assets/imageEZIwwEYG3Y8CPNbrDSKmAo11GtMJV1d5.jpg"
                                              alt={product.p_id}/>
                                         <div className="product-details-description">
                                             <p>

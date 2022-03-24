@@ -24,16 +24,16 @@ class Delivery extends Component {
             <div>
                 <table className="table">
                     <tr className="tag1">
-                        <td style={{textAlign:"left"}}>주문일자[주문번호]</td>
-                        <td style={{textAlign:"left"}}>이미지</td>
-                        <td style={{textAlign:"right"}}>상품정보</td>
-                        <td style={{width: '170px', textAlign:"right"}}>수량</td>
-                        <td style={{textAlign:"right"}}>상품구매금액</td>
-                        <td style={{textAlign:"center"}}>주문처리상태</td>
-                        <td style={{width: '140px', textAlign:"center"}}>취소/교환/반품</td>
+                        <td style={{textAlign:"left"}}>Order date[Order No.]</td>
+                        <td style={{textAlign:"left"}}>Image</td>
+                        <td style={{textAlign:"right"}}>Item info</td>
+                        <td style={{width: '170px', textAlign:"right"}}>Count</td>
+                        <td style={{textAlign:"right"}}>Price</td>
+                        <td style={{textAlign:"center"}}>Order States</td>
+                        <td style={{width: '140px', textAlign:"center"}}>Cancel/Change/Return</td>
                     </tr>
                     <tr className="tag2">
-                        <td colSpan="7"><br/><br/><br/><br/>주문내역이 없습니다.<br/><br/><br/><br/><br/></td>
+                        <td colSpan="7"><br/><br/><br/><br/> No Order.<br/><br/><br/><br/><br/></td>
                     </tr>
                 </table>
             </div>

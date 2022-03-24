@@ -6,6 +6,7 @@ import Mileage from "../components/Mileage";
 import Order from "../components/Order";
 import Filter from "../components/Filter";
 import MainCart from "../components/MainCart";
+import ChatBot from "../components/ChatBot";
 
 
 const Home = () => {
@@ -18,6 +19,8 @@ const Home = () => {
             <Delivery />
             <Mileage />
             <Order />
+            <login/>
+            <createuser/>
         </div>
     );
 };
